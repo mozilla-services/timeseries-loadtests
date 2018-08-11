@@ -25,7 +25,8 @@ for line in input:
 
         opentsb_metric = {
             "metric": "ctr",
-            "timestamp": timestamp,
+            # convert nanoseconds since epoch to seconds
+            "timestamp": round(timestamp / 1000000000),
             "value": fieldvalue,
             "tags": {"some": tagvalue, "field": "n"},
         }

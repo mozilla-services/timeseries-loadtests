@@ -20,7 +20,7 @@ for line in input:
         timestamp = int(m.group(3))
 
         # ignoring timestamp for prometheus
-        prometheus_metric = "ctr{some=%s,field=n} %s\n" % (tagvalue, fieldvalue)
+        prometheus_metric = 'ctr{some="%s",field="n"} %s\n' % (tagvalue, fieldvalue)
         prometheus_batch.append(prometheus_metric)
 
         opentsb_metric = {

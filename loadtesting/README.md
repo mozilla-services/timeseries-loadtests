@@ -44,4 +44,30 @@ Starting exporter on 8002
 
 ## OpenTSDB
 
-I plan to create tool for OpenTSDB as well using http://opentsdb.net/docs/build/html/api_http/put.html 
+Before running this you must `pip install requests`
+
+```
+usage: opentsdb_writer.py [-h] [--num-writers NUM_WRITERS]
+                          [--write-interval WRITE_INTERVAL]
+                          [--num-writes NUM_WRITES] [--timeout TIMEOUT]
+                          [--verbose]
+                          server
+
+Send random sets of precalculated data to OpenTSDB
+
+positional arguments:
+  server                OpenTSDB server to write to
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --num-writers NUM_WRITERS
+                        Number of concurrent writers
+  --write-interval WRITE_INTERVAL
+                        How often to write
+  --num-writes NUM_WRITES
+                        Total number of writes to make. Default and minimum is
+                        number of writers.
+  --timeout TIMEOUT     How long to wait for a response before aborting the
+                        benchmark
+  --verbose             Output status of each request
+```

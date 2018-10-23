@@ -1,8 +1,10 @@
 # Purpose
 
-In influx-stress we found a tool that is able to generate a representative data set and write it to influxdb, but we failed to find suitable tools for prometheus and opentsdb.
+In [influx-stress](https://github.com/influxdata/influx-stress) we found a tool that is able to generate a representative data set and write it to influxdb, but we failed to find suitable tools for prometheus and opentsdb.
 
 I had the idea that we could use influx-stress to generate the data set and then create scripts for writing it to prometheus and opentsdb. This is the result. Each time the prometheus or opentsdb script publishes data, it will randomly choose one of the entries from the data set.
+
+If you are interested in testing read rather than write performance, check out other tools like [influxdb-comparisons](https://github.com/influxdata/influxdb-comparisons) or [tsbs](https://github.com/timescale/tsbs).
 
 # Preprocessing
 
@@ -20,7 +22,7 @@ $ mkdir opentsdb_data
 $ ./format_data.py
 ```
 
-For each database that results in 2000 files with 1000 timeseries each in the format they expect for ingestion. All of the timeseries are unique, All of the timeseries are unique.
+For each database that results in 2000 files with 1000 timeseries each in the format they expect for ingestion. All of the timeseries are unique.
 
 # Running
 
